@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Page</title>
+    <style>
+        body {
+    /* background-image: url('C:\Users\vinish reddy\Downloads\pexels-photo-2344227.jpg'); */
+    background-image: url('pexels-photo-2344227.jpg');
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+        .container {
+            width: 80%;
+            margin: auto;
+            padding-top: 50px;
+            text-align: center;
+        }
+        .input-box {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #555;
+            border-radius: 10px;
+            /* background-color: #333; */
+            background-color: white;
+            resize: none; /* Disable textarea resizing */
+        }
+        .output-box {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #555;
+            border-radius: 10px;
+            /* background-color: #333; */
+            background-color: white;
+            margin-top: 20px;
+            min-height: 200px; /* Set minimum height */
+        }
+        .button {
+            font-size: 20px;
+            margin: 50px;
+            padding: 10px 20px;
+            background-color: #FF5733;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #FF8C00; /* brighter color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <textarea class="input-box" placeholder="Enter your question here..."></textarea>
+        <!-- <button class="button" onclick="performComputation()">Compute</button> -->
+        <div class="output-box" id="output-box"></div>
+        <button class="button" onclick="performComputation()">Compute</button>
+    </div>
+
+    <script>
+        function performComputation() {
+            // Get the input text
+            var inputText = document.querySelector('.input-box').value;
+            
+            // Placeholder for computation (replace with your computation logic)
+            var outputText = "Placeholder output for: " + inputText;
+
+            // Update the output box with the computed result
+            document.getElementById('output-box').innerHTML = outputText;
+        }
+    </script>
+</body>
+</html>

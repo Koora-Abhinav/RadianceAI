@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+        .container {
+            width: 80%;
+            margin: auto;
+            padding-top: 50px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            padding-bottom: 20px;
+        }
+        .button {
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: #FF5733; /* bright color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #FF8C00; /* brighter color on hover */
+        }
+        .plot {
+            margin-top: 50px;
+ 
+        }
+        .plot img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>PREDICTION RESULT</h2>
+        <!-- <p>{{ prediction_result }}</p> -->
+        <form action="/llm" method="get">
+            <button type="submit" class="button">LLM</button>
+        </form>
+        
+        <div class="plot">
+            <h2>Histogram</h2>
+            <img src="static/histogram.jpg" alt="Histogram">
+            
+            <h2>Line Plot</h2>
+            <img src="static/lineplot.jpg" alt="Line Plot">
+
+            <h2>Pie Chart</h2>
+            <img src="static/piechart.jpg" alt="Line Plot">
+
+
+        </div>
+    </div>
+</body>
+</html>

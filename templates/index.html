@@ -1,0 +1,423 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Energy Prediction</title>
+    <style>
+        body {
+            background-color: #222; /* Dark mode background color */
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .big-font {
+            font-size: 48px;
+            text-align: center;
+            font-weight: bold;
+            padding-top: 50px;
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .button {
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: #FF5733; /* bright color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #FF8C00; /* brighter color on hover */
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: auto;
+            margin-top: 30px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #555;
+            color: white;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .file-input-label {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #FF5733; /* bright color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .file-input-label:hover {
+            background-color: #FF8C00; /* brighter color on hover */
+        }
+    </style>
+</head>
+<body>
+    <p class="big-font">Irradiance Prediction</p>
+    <div class="center">
+        <form action="/upload" method="post" enctype="multipart/form-data" id="upload-form">
+            <label for="file-upload" class="file-input-label">Choose file</label>
+            <input type="file" name="file" id="file-upload" onchange="uploadFile()">
+            <button type="submit" class="button" id="upload-button" style="display:none;">Upload Dataset</button>
+        </form>
+    </div>
+
+    <script>
+        function uploadFile() {
+            document.getElementById("upload-form").submit();
+            document.getElementById("upload-button").style.display = "block";
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Energy Prediction</title>
+    <style>
+        body {
+            background-color: #33A5FF; /* Dark mode background color */
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .big-font {
+            font-size: 48px;
+            text-align: center;
+            font-weight: bold;
+            padding-top: 50px;
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .button {
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: #FF5733; /* bright color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #FF8C00; /* brighter color on hover */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #555;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .about{
+            align-items: center;
+            font-family: serif;
+            font-size: 16px; 
+            /* margin-top: 50px; */
+            text-align: left ;
+            margin: 50px auto; 
+            max-width: 900px; 
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+             
+        }
+    </style>
+</head>
+<body>
+    <p class="big-font">Irradiance Prediction</p>
+    <div class="center">
+        <form action="/upload" method="post" enctype="multipart/form-data" id="upload-form">
+            <label for="file-upload" class="button">Choose files</label>
+            <input type="file" name="file" id="file-upload" multiple style="display:none;">
+            <button type="submit" class="button" id="upload-button" style="display:none;">Upload Datasets</button>
+        </form>
+    </div>
+
+    <div class="about">
+  <h2 style="font-size: 30px;">What is Solar Irradiance ?</h2>
+  <p style="line-height: 1.4;font-size: 20px;">Solar irradiance refers to the amount of solar energy reaching a unit area of the Earth's surface, typically measured in watts per square meter (kW-hr/m²) per day. It encompasses both direct sunlight, which comes directly from the sun without any obstruction, and diffuse sunlight, which is scattered by molecules and particles in the atmosphere. Solar irradiance data is crucial for various applications, including solar energy generation, climate modeling, and environmental studies. In solar energy generation, accurate knowledge of solar irradiance helps optimize the performance and placement of solar panels, ultimately maximizing energy production. Climate models rely on solar irradiance data to understand Earth's energy budget, as solar radiation is a primary driver of atmospheric processes such as temperature variations, cloud formation, and weather patterns. Additionally, solar irradiance data aids in environmental studies by providing insights into ecosystem dynamics, agricultural productivity, and the effects of solar radiation on human health.</p>
+  
+</div>
+
+
+
+
+
+
+    <script>
+        document.getElementById("file-upload").addEventListener("change", function() {
+            document.getElementById("upload-form").submit();
+            document.getElementById("upload-button").style.display = "block";
+        });
+    </script>
+</body>
+</html>  -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Energy Prediction</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #33A5FF, #0066CC); /* Gradient background */
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .big-font {
+            font-size: 48px;
+            text-align: center;
+            font-weight: bold;
+            /* padding-top: 50px; */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow */
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .button {
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: #FF5733;
+            color: white;
+            border: none;
+            border-radius: 25px; /* Rounded corners */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Box shadow */
+        }
+        .button:hover {
+            background-color: #FF8C00;
+            transform: translateY(-2px); /* Vertical movement on hover */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #555;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .about {
+            align-items: center;
+            font-family: 'Merriweather', serif; /* Elegant font */
+            font-size: 18px;
+            margin: 40px auto;
+            max-width: 900px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333; /* Dark text color */
+        }
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #0066CC; /* Accent color */
+        }
+        .about p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <p class="big-font">Irradiance Prediction</p>
+    <div class="center">
+        <form action="/upload" method="post" enctype="multipart/form-data" id="upload-form">
+            <label for="file-upload" class="button">Choose files</label>
+            <input type="file" name="file" id="file-upload" multiple style="display:none;">
+            <button type="submit" class="button" id="upload-button" style="display:none;">Upload Datasets</button>
+        </form>
+    </div>
+
+    <div class="about">
+        <h2>What is Solar Irradiance?</h2>
+        <p>Solar irradiance refers to the amount of solar energy reaching a unit area of the Earth's surface, typically measured in watts per square meter (kW-hr/m²) per day. It encompasses both direct sunlight, which comes directly from the sun without any obstruction, and diffuse sunlight, which is scattered by molecules and particles in the atmosphere. Solar irradiance data is crucial for various applications, including solar energy generation, climate modeling, and environmental studies.</p>
+        <p>In solar energy generation, accurate knowledge of solar irradiance helps optimize the performance and placement of solar panels, ultimately maximizing energy production. Climate models rely on solar irradiance data to understand Earth's energy budget, as solar radiation is a primary driver of atmospheric processes such as temperature variations, cloud formation, and weather patterns. Additionally, solar irradiance data aids in environmental studies by providing insights into ecosystem dynamics, agricultural productivity, and the effects of solar radiation on human health.</p>
+    </div>
+
+    <script>
+        document.getElementById("file-upload").addEventListener("change", function() {
+            document.getElementById("upload-form").submit();
+            document.getElementById("upload-button").style.display = "block";
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Energy Prediction</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #FFD700, #FFA500); /* New gradient background */
+            color: #333; /* Dark text color */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .big-font {
+            font-size: 48px;
+            text-align: center;
+            font-weight: bold;
+            /* padding-top: 50px; */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .button {
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: #FF5733;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .button:hover {
+            background-color: #FF8C00;
+            transform: translateY(-2px);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #555;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .about {
+            align-items: center;
+            font-family: 'Merriweather', serif;
+            font-size: 18px;
+            margin: 50px auto;
+            max-width: 900px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 2px 8px 30px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #0066CC;
+        }
+        .about p {
+            line-height: 1.6;
+        }
+
+        .about-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="header-image"></div>
+    <p class="big-font">Solar Irradiance Prediction</p>
+    <div class="center">
+        <form action="/upload" method="post" enctype="multipart/form-data" id="upload-form">
+            <label for="file-upload" class="button">Upload Datasets</label>
+            <input type="file" name="file" id="file-upload" multiple style="display:none;">
+            <!-- <button type="submit" class="button" id="upload-button" style="display:none;">Upload Datasets</button> -->
+        </form>
+    </div>
+
+    <div class="about">
+        <h2>What is Solar Irradiance?</h2>
+        <p>Solar irradiance refers to the amount of solar energy reaching a unit area of the Earth's surface, typically measured in watts per square meter (kW-hr/m²) per day. It encompasses both direct sunlight, which comes directly from the sun without any obstruction, and diffuse sunlight, which is scattered by molecules and particles in the atmosphere. Solar irradiance data is crucial for various applications, including solar energy generation, climate modeling, and environmental studies.</p>
+        <p>In solar energy generation, accurate knowledge of solar irradiance helps optimize the performance and placement of solar panels, ultimately maximizing energy production. Climate models rely on solar irradiance data to understand Earth's energy budget, as solar radiation is a primary driver of atmospheric processes such as temperature variations, cloud formation, and weather patterns. Additionally, solar irradiance data aids in environmental studies by providing insights into ecosystem dynamics, agricultural productivity, and the effects of solar radiation on human health.</p>
+    </div>
+
+    <script>
+        document.getElementById("file-upload").addEventListener("change", function() {
+            document.getElementById("upload-form").submit();
+            document.getElementById("upload-button").style.display = "block";
+        });
+    </script>
+</body>
+</html>
